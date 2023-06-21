@@ -47,7 +47,6 @@ async function login(req, res) {
     }
 }
 
-
 // Helper Functions //
 //this is called whenever we need to create a web token
 function createJWT(user) {
