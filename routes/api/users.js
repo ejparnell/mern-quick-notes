@@ -4,6 +4,7 @@ const usersCtrl = require('../../controllers/api/users')
 const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 //POST route to handle a controller function (currently TBD)
+//"create" here refers to the controller function named "create"
 router.post('/', usersCtrl.create)
 //POST route to handle log in controller
 router.post('/login', usersCtrl.login)

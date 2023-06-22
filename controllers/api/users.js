@@ -2,6 +2,7 @@ const User = require('../../models/user')
 const jwt = require('jsonwebtoken')
 const bcrypt = require ('bcrypt')
 
+//"create" function here is kalesoup
 async function create(req, res) {
     // baby steps, this was used to test our frontend form
     // api call functionality
@@ -12,7 +13,8 @@ async function create(req, res) {
     //     }
     // })
     try {
-        //add user to the db
+        //"create" here adds user to the db
+        //https://mongoosejs.com/docs/api/model.html#Model.create()
         const user = await User.create(req.body)
 
         const token = createJWT(user)

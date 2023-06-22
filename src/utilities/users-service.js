@@ -2,17 +2,18 @@
 import * as usersApi from './users-api'
 
 export async function signUp(userData) {
-    console.log('this is userData in users-serive', userData)
+    console.log('this is userData in users-service', userData)
     //Delegate the network request code to the users-api.js API module
     //which will ultimately return a JSON web token
     const token = await usersApi.signUp(userData)
+    console.log('this is token in signUp in users-service', token)
 
     //Persist the "token"
     localStorage.setItem('token', token);
     
     //we'll return the token that we've received from the API
     return getUser() 
-}
+} 
 
 export async function login(credentials) {
     try {

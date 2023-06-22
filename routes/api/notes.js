@@ -1,0 +1,8 @@
+const express = require('express')
+const router = express.Router()
+const notesCtrl = require('../../controllers/api/notes')
+
+//POST route to handle a controller function (currently TBD)
+router.post('/', notesCtrl.createNote)
+
+module.exports = router
