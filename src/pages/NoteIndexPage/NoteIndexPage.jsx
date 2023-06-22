@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { createNote } from "../../utilities/notes-service";
+import * as notesAPI from "../../utilities/notes-api";
 
 export default function NotesIndexPage({ user }) {
    const [notes, setNotes] = useState([]);
@@ -9,6 +10,14 @@ export default function NotesIndexPage({ user }) {
    //    console.log("this is newNoteText.text", newNoteText);
    //    console.log("user in handleSubmit", user);
    // }, [newNoteText, user]);
+
+   useEffect(function () {
+      async function getNotes() {
+         const notes = await notesAPI.getAll();
+         setNotes(notes);
+      }
+      getNotes();
+   }, []);
 
    async function handleSubmit(event) {
       event.preventDefault();
